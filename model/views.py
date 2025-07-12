@@ -11,13 +11,16 @@ from dotenv import load_dotenv
 from hume import AsyncHumeClient
 from hume.tts import PostedUtterance
 import asyncio
+import os 
 
 from openai import OpenAI
 load_dotenv()
-# Initialize the OpenAI client
-client = OpenAI(api_key="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")
 
-hume_api_key = "uEnAvZrEXQqbpsfw2AdCn90t5AzJobIMk6GmIURLbMkJmgHi"
+open_ai_key = os.getenv("OPENAI_API_KEY")
+hume_api_key = os.getenv("HUME_API_KEY")
+# Initialize the OpenAI client
+client = OpenAI(api_key=open_ai_key)
+
 hume = AsyncHumeClient(api_key=hume_api_key)
 
 def Text_to_speech(text: str):
