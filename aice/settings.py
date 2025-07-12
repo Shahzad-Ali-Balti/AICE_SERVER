@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-!t281#ldfcuob(+y*y$v_e08w48^838^c8i5#8i^k_2=xi#lkc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://shahzad216.pythonanywhere.com']
 
 
 # Application definition
@@ -78,10 +78,10 @@ TEMPLATES = [
 WSGI_APPLICATION = "aice.wsgi.application"
 
 CORS_ALLOW_ALL_ORIGINS = True
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5173",  # Frontend running on this port
-#     "http://yourfrontenddomain.com",  # Another allowed frontend domain
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Frontend running on this port
+    "https://aice-call-workflow.vercel.app",  # Another allowed frontend domain
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
